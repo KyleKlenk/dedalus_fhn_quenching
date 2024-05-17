@@ -2,34 +2,16 @@
 Code for the investigation of quenching of stable pulses in FitzHugh-Nagumo using the Dedalus Project.
 
 Instructions:
-- install [dedalus](https://github.com/DedalusProject/dedalus)  (version 2.2207) in an environment (conda recommended -- see `environment.lock.yml`). Environment may be instantiated using 
+1. install [dedalus](https://github.com/DedalusProject/dedalus)  (version 2.2207) in an environment (conda recommended -- see `environment.lock.yml`). Environment may be instantiated using 
 ```sh
 conda env create -f environment.lock.yml
 ```
-- activate the conda environment with `conda activate dedalus2`
-- Either:
--run `waves.sh` to generate the input data for the stable and unstable pulses; this involves the solution[^1][^2] of a nonlinear boundary value problem (NLBVP) for $(u,c)$:
-
-$$
-	D u'' + c u' + f(u) = 0, B_l(u, u') = 0, B_r(u, u') = 0.
-$$
-
-This code then solves the left (AVP) and right (EVP) eigenproblems,
-
-$$ 
-	v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^\dagger,
-$$
-
-for the leading eigenmodes (e.g., $Re(\sigma) > -Re(\sigma_1) $), whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
-	
+2. activate the conda environment with `conda activate dedalus2`
+3. Either:
+	- run `waves.sh` to generate the input data for the stable and unstable pulses; this involves the solution[^1][^2] of a nonlinear boundary value problem (NLBVP) for $(u,c)$: $D u'' + c u' + f(u) = 0, B_l(u, u') = 0, B_r(u, u') = 0.$ This code then solves the left (AVP) and right (EVP) eigenproblems: $v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^\dagger,$ for the leading eigenmodes (e.g., $Re(\sigma) > -Re(\sigma_1) $), whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
 	- Or use the HDF files in the repository (recommended).
-- run `quench.sh` which solves the quenching problem for a selected stable pulse and (presently hard-coded) family of perturbations. This uses a bisection root-finding procedure to solve for the root of the function,
 
-$$
-	f(U_q) = \psi(\check{u} + U_q \check{X}(x-\theta; x_s)) - \hat{\psi},
-$$
-
-for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| \gg 1$ is 'large', yielding $(x_s, \theta, U_q)$ tuples.
+4. run `quench.sh` which solves the quenching problem for a selected stable pulse and (presently hard-coded) family of perturbations. This uses a bisection root-finding procedure to solve for the root of the function, $ f(U_q) = \psi(\check{u} + U_q \check{X}(x-\theta; x_s)) - \hat{\psi},$ for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| \gg 1$ is 'large', yielding $(x_s, \theta, U_q)$ tuples.
 
 The corresponding linear theory calculation code is available [here](https://github.com/cmarcotte/linear_prediction/tree/main).
 
