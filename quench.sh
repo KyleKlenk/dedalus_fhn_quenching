@@ -13,7 +13,7 @@ if [ ${dolin} = 1 ]; then
 	u0file=./waves/u0
 fi
 
-for ((gg = 0 ; gg <= 3 ; gg+=1)); do # 0, 3, 1
+for ((gg = 0 ; gg <= 0 ; gg+=1)); do 	# originally: 0, 3, 1
 	Ufile=$wavedir/${gg}/U
 	Pfile=$wavedir/${gg}/p
 	ufile=$critdir/${gg}/U
@@ -40,5 +40,4 @@ for ((gg = 0 ; gg <= 3 ; gg+=1)); do # 0, 3, 1
 			inflight=0
 		fi
 	done
-	#wait
 done
