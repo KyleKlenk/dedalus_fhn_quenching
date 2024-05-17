@@ -26,7 +26,7 @@ $$
 	f(U_q) = \psi(\check{u} + U_q \check{X}(x-\theta; x_s)) - \hat{\psi},
 $$
 
-for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| >> 1$ is 'large'.
+for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| \gg 1$ is 'large', yielding $(x_s, \theta, U_q)$ tuples.
 
 [^1]: This is technically implemented as a multi-fidelity continuation; first the input wave is continued in $\gamma$ with half as many modes and doubled dealiasing for intermediate $\gamma$s, then refined when $\gamma$ is in the predefined set of interesting values to yield a resolved wave. 
 [^2]: This is a substantial calculation at the defaults (in part due to an inefficiency with handling constant fields in dedalus 2); if running for curiousity, I recommend setting `N=1024` and `L=1000` in `waves.sh` for `index=10` -- unfortunately only the tolerance can be tweaked for `index=11` and still successfully find the solution (e.g. `tol=3e-7`).
