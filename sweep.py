@@ -79,9 +79,7 @@ du = domain.new_field(name="du")
 
 # L1-norm of uc
 
-uc = [
-    InterpolatedUnivariateSpline(uc[0][:], uc[m][:], k=3, ext=3)(z) for m in range(1, 3)
-]
+uc = [InterpolatedUnivariateSpline(uc[0][:], uc[m][:], k=3, ext=3)(z) for m in range(1, 3)]
 du.set_scales(len(uc[0]) / N, keep_data=True)
 du["g"] = np.copy(np.abs(uc[0]))
 nc = (du.integrate("z"))["g"][0]
