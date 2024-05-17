@@ -14,13 +14,17 @@ $$
 $$
 
 and then the left (AVP) and right (EVP) eigenproblems,
+
 $$ 
 	v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^dagger,
 $$
+
 whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
 - run `quench.sh` which solves the quenching problem for a selected stable pulse and (presently hard-coded) family of perturbations. This uses a bisection root-finding procedure to solve for the root of the function,
+
 $$
 	f(U_q) = \psi(\check{u} + U_q \check{X}(x-\theta; x_s)) - \hat{\psi},
+
 $$
 for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| >> 1$ is 'large'.
 
