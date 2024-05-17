@@ -8,7 +8,6 @@ conda env create -f environment.lock.yml
 ```
 - activate the conda environment with `conda activate dedalus2`
 - run `waves.sh` to generate the input data for the stable and unstable pulses; this involves the solution[^1][^2] of a nonlinear boundary value problem (NLBVP) for $(u,c)$:
-
 $$
 	D u'' + c u' + f(u) = 0, B_l(u, u') = 0, B_r(u, u') = 0,
 $$
