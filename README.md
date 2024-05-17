@@ -7,7 +7,8 @@ Instructions:
 conda env create -f environment.lock.yml
 ```
 - activate the conda environment with `conda activate dedalus2`
-- run `waves.sh` to generate the input data for the stable and unstable pulses; this involves the solution[^1][^2] of a nonlinear boundary value problem (NLBVP) for $(u,c)$:
+- Either:
+-run `waves.sh` to generate the input data for the stable and unstable pulses; this involves the solution[^1][^2] of a nonlinear boundary value problem (NLBVP) for $(u,c)$:
 
 $$
 	D u'' + c u' + f(u) = 0, B_l(u, u') = 0, B_r(u, u') = 0.
@@ -19,7 +20,13 @@ $$
 	v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^\dagger,
 $$
 
+<<<<<<< HEAD
 for the leading eigenmodes (e.g., $Re(\sigma) > -Re(\sigma_1) $), whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
+=======
+for the leading eigenmodes (e.g., $Re(\sigma) > -Re(\sigma_1) $).
+whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
+	- Or use the HDF files in the repository (recommended).
+>>>>>>> b04ee30 (adding HDF files)
 - run `quench.sh` which solves the quenching problem for a selected stable pulse and (presently hard-coded) family of perturbations. This uses a bisection root-finding procedure to solve for the root of the function,
 
 $$
