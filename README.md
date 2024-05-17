@@ -16,7 +16,7 @@ $$
 and then the left (AVP) and right (EVP) eigenproblems,
 
 $$ 
-	v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^dagger,
+	v \sigma = L v, w^\dagger \sigma^* = L^\dagger w^\dagger,
 $$
 
 whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
@@ -24,8 +24,8 @@ whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')
 
 $$
 	f(U_q) = \psi(\check{u} + U_q \check{X}(x-\theta; x_s)) - \hat{\psi},
-
 $$
+
 for $0 > U_q \geq U_q^{max}$, where $|U_q^{max}| >> 1$ is 'large'.
 
 [^1]: This is technically implemented as a multi-fidelity continuation; first the input wave is continued in $\gamma$ with half as many modes and doubled dealiasing for intermediate $\gamma$s, then refined when $\gamma$ is in the predefined set of interesting values to yield a resolved wave. 
