@@ -21,6 +21,7 @@ $$
 $$
 
 for the leading eigenmodes (e.g., $Re(\sigma) > -Re(\sigma_1) $), whose boundary conditions are inherited from the NLBVP formulation of $B_l(u,u')$ and $B_r(u,u')$.[^3]
+	
 	- Or use the HDF files in the repository (recommended).
 - run `quench.sh` which solves the quenching problem for a selected stable pulse and (presently hard-coded) family of perturbations. This uses a bisection root-finding procedure to solve for the root of the function,
 
